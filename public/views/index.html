@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weekend 4 Live Solve Betelgeuse</title>
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/weekend4.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles/genero.css">
+  </head>
+  <body ng-app='myApp'>
+    <h1>Honk</h1>
+    <div ng-controller='EmployeeController as vm'>
+      <input type='text' placeholder="First Name" ng-model='vm.fNameIn' />
+      <input type='text' placeholder="Last Name" ng-model='vm.lNameIn' />
+      <input type='text' placeholder="Job Title" ng-model='vm.jobTitleIn' />
+      <input type='number' placeholder="Salary" ng-model='vm.salaryIn' />
+      <button ng-click='vm.submitEmployee()'>Submit Employee</button>
+    </div>
+  </body>
+</html>
