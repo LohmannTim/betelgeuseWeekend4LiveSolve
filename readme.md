@@ -13,4 +13,4 @@ SANE stack app to track employees and calculate monthly salaries. Branches creat
 - 0.7: write row to table ([branch](https://github.com/devjanaprime/betelgeuseWeekend4LiveSolve/tree/ver0_7))
 - 0.8: read from table
 - 0.9: do salary math
-- 1.0: Data on DOM
+- 1.0: Data on DOM (master branch)
