@@ -16,6 +16,8 @@ myApp.controller( 'EmployeeController', [ '$http', function( $http ){
       method: 'POST',
       url: 'employee',
       data: objectToSend
+    }).then( function( response ){
+      console.log( 'back from post with:', response.data );
     }); // end test run
   }; // end submitEmployee
 

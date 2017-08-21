@@ -29,8 +29,16 @@ router.post( '/', function( req, res ){
     else{
       console.log( 'connected to db' );
       connection.query( 'INSERT INTO employees ( fname, lname, jobtitle, salary ) values ( $1, $2, $3, $4 )',
-                        [ req.body.fname, req.body.lname, req.body.jobtitle, req.body.salary ] );
-      res.send( 'ribbet' );
+      [ req.body.fname, req.body.lname, req.body.jobtitle, req.body.salary ], function( err ){
+        if( err ){
+          console.log( 'error writing to table:', err );
+          res.sendStatus( 500 );
+        }// end error
+        else{
+          console.log( 'record written' );
+          res.sendStatus( 201 );
+        } // end no error
+      }); // end query
     } // end no error
   }); // end pool connect
 }); // end post
