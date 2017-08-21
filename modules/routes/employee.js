@@ -14,7 +14,16 @@ router.get( '/', function( req, res ){
     } // end error
     else{
       console.log( 'connected to db' );
-      res.send( 'meow' );
+      connection.query( 'SELECT * FROM employees', function( err, results ){
+        if( err ){
+          console.log( 'error reading from table:', err );
+          res.sendStatus( 500 );
+        }// end error
+        else{
+          console.log( 'I read stuff' );
+          res.send( results.rows );
+        } // end no error
+      }); //end query
     } // end no error
   }); // end pool connect
 }); // end get

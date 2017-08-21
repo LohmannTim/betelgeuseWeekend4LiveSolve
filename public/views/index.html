@@ -15,6 +15,15 @@
       <input type='text' placeholder="Job Title" ng-model='vm.jobTitleIn' />
       <input type='number' placeholder="Salary" ng-model='vm.salaryIn' />
       <button ng-click='vm.submitEmployee()'>Submit Employee</button>
+      <p ng-repeat='duck in vm.employees'>
+        {{ duck.fname }} {{ duck.lname }}, id: {{ duck.id }} ({{ duck.jobtitle }}) - ${{ duck.salary }}
+      </p>
+      <h2>
+        Total Salaries: ${{ vm.totalAnnualSalaries }}
+      </h2>
+      <h2>
+        Monthly Salary Cost: ${{ vm.monthlySalaryDrain }}
+      </h2>
     </div>
   </body>
 </html>
